@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1055288715957",
+    "project_id": "flutteruber-484bb",
+    "storage_bucket": "flutteruber-484bb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1055288715957:android:01bc132beeab2828bd2cfc",
+        "android_client_info": {
+          "package_name": "com.example.flutteruber"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1055288715957-blo63s5bme83n4996754ov0ivcudiuh5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDIMdNA9ILo1YQGSOFwWu2EwkISsEmfcwE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1055288715957-blo63s5bme83n4996754ov0ivcudiuh5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
