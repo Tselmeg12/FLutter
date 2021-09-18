@@ -199,7 +199,7 @@ class RegistrationScreen extends StatelessWidget {
           return ProgressDialog(message: "Registering, Please wait....",);
         }
     );
-    final User? firebaseUser = (await _firebaseAuth
+    final User firebaseUser = (await _firebaseAuth
         .createUserWithEmailAndPassword(
         email: emailTextEditingController.text,
         password: passwordTextEditingController.text

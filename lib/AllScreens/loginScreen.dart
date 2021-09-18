@@ -138,7 +138,7 @@ class LoginScreen extends StatelessWidget {
         return ProgressDialog(message: "Authentication, Please wait....",);
       }
     );
-    final User? firebaseUser = (await _firebaseAuth
+    final User firebaseUser = (await _firebaseAuth
           .signInWithEmailAndPassword(
           email: emailTextEditingController.text,
           password: passwordTextEditingController.text

@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutteruber/AllScreens/searchScreen.dart';
 import 'package:flutteruber/AllWidgets/Divider.dart';
 import 'package:flutteruber/Assistants/assistantMethods.dart';
 import 'package:flutteruber/DataHandler/appData.dart';
@@ -19,10 +20,10 @@ class MainScreen extends StatefulWidget {
 
 class _MainScreenState extends State<MainScreen> {
   Completer<GoogleMapController> _controllerGoogleMap = Completer();
-  late GoogleMapController newGoogleMapController;
+  GoogleMapController newGoogleMapController;
 
   GlobalKey<ScaffoldState> scaffoldKey = new GlobalKey<ScaffoldState>();
-  late Position   currentPosition;
+   Position   currentPosition;
   var geoLocator = Geolocator();
   double bottomPaddingOfMap = 0;
 
@@ -124,7 +125,7 @@ class _MainScreenState extends State<MainScreen> {
             child: GestureDetector(
               onTap: ()
               {
-                scaffoldKey.currentState!.openDrawer();
+                scaffoldKey.currentState.openDrawer();
 
               },
 
@@ -179,29 +180,36 @@ class _MainScreenState extends State<MainScreen> {
                     Text("Hi there", style: TextStyle(fontSize: 12.0),),
                     Text("Where to", style: TextStyle(fontSize: 20.0, fontFamily: "Brand-Bold"),),
                     SizedBox(height: 20.0),
-                    Container(
+                    GestureDetector(
+                      onTap: ()
+                      {
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=> SearchScreen()));
 
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.only(topLeft: Radius.circular(18.0), topRight: Radius.circular(18.0 )),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.black,
-                            blurRadius: 6.0,
-                            spreadRadius: 0.5,
-                            offset: Offset(0.7,0.7),
+                      },
+                      child: Container(
 
-                          ),
-                        ],
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(12.0),
-                        child: Row(
-                          children: [
-                            Icon(Icons.search, color: Colors.blueAccent,),
-                            SizedBox(width: 10.0,),
-                            Text("Search Drop Off ")
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.only(topLeft: Radius.circular(18.0), topRight: Radius.circular(18.0 )),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.black,
+                              blurRadius: 6.0,
+                              spreadRadius: 0.5,
+                              offset: Offset(0.7,0.7),
+
+                            ),
                           ],
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.all(12.0),
+                          child: Row(
+                            children: [
+                              Icon(Icons.search, color: Colors.blueAccent,),
+                              SizedBox(width: 10.0,),
+                              Text("Search Drop Off ")
+                            ],
+                          ),
                         ),
                       ),
                     ),
@@ -216,7 +224,7 @@ class _MainScreenState extends State<MainScreen> {
 
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            SizedBox(height: 4.0,),
+                            SizedBox(height: 12.0,),
                             Text(
                                 Provider.of<AppData>(context).pickUpLocation != null
                                   ? Provider.of<AppData>(context).pickUpLocation.placeName
@@ -227,7 +235,7 @@ class _MainScreenState extends State<MainScreen> {
                         )
                       ],
                     ),
-                    SizedBox(height: 16.0,),
+                    SizedBox(height: 4.0,),
                     Row(
                       children: [
                         Icon(Icons.work, color: Colors.grey,),
